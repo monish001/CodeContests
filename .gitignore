@@ -1,0 +1,7 @@
+!.gitignore
+*.exe
+*.o
+*.class
+*.out
+*.BAK
+*.jnlp
