@@ -15,7 +15,7 @@
 #include <cstring>
 #include <functional>
 using namespace std;
-
+//ifstream cin("in.txt");
 int main(int argc, char *argv[]) {
 	int t;
 	scanf("%d", &t);
