@@ -1,0 +1,52 @@
+//QuickSort
+//Not compiled, just contains the algo.
+enum sortorder
+{
+	ASCENDING, DESCENDING
+};
+
+void partition(int* intarray, int beg, int end, enum sortorder order)
+{
+//	int pivotIndex = (beg+end)/2;
+	int pivotIndex = beg + random(end-beg);//random(n) returns a randomly selected number in the range [0,n)
+	swap(intarray[pivotIndex], array[end]);
+	
+	int storeIndex = beg, pivotVal = intarray[pivotIndex];
+	if(order == ASCENDING)
+	{
+		for(int index=beg; index<end; index++)
+		{
+			if(intarray[index]<pivotVal)
+			{
+				swap(intarray[index], intarray[storeIndex++];
+			}
+			swap(intarray[storeIndex], intarray[end]);
+		}
+	}
+	return storeIndex;
+}
+
+void quicksort(int* intarray, int begIndex, int endIndex, enum sortorder order)
+{
+	if(begIndex<=endIndex)
+		return;
+	int pivotIndex = partition(intarray, begIndex, endIndex, order);
+	quicksort(intarray, begIndex, pivotIndex-1, order);
+	quicksort(intarray, pivotIndex+1, endIndex, order);
+}
+
+
+
+int main()
+{
+	int *intArray = new int[10];
+	for(int index=0; index<10; index++)
+	{
+		intArray[i] = 20 - i*2;
+	}
+	
+	quicksort(intArray, 3, 7, sortorder.ASCENDING);
+	assert.sorted(intArray, 3, 7, sortorder.ASCENDING);
+	
+	delete[] intArray;
+}
